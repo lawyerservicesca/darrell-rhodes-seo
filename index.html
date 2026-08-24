@@ -245,6 +245,28 @@
   .audit-banner .kicker { color: var(--accent-bright); }
   .audit-banner h2 { color: #fff; font-size: clamp(1.6rem, 4vw, 2.3rem); max-width: 22ch; margin: 12px auto 16px; }
   .audit-banner p { color: var(--code-ink); opacity: 0.9; max-width: 54ch; margin: 0 auto 28px; font-size: 1.05rem; }
+  @media (max-width: 560px) { .audit-banner { padding: 34px 22px; } }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid { display: grid; grid-template-columns: 200px 1fr; gap: 44px; align-items: start; }
+  .avatar-col { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; }
+  .avatar-mono {
+    width: 168px; height: 168px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 2.8rem; color: #fff;
+    background: linear-gradient(145deg, var(--accent), var(--accent-bright));
+    box-shadow: var(--shadow);
+  }
+  .avatar-meta strong { display: block; font-family: 'Space Grotesk', sans-serif; font-size: 1rem; }
+  .avatar-meta span { font-size: 0.85rem; color: var(--ink-faint); }
+  .about-text p { color: var(--ink-soft); font-size: 1rem; margin-bottom: 16px; }
+  .about-text p:last-of-type { margin-bottom: 0; }
+  .about-text a { color: var(--accent-bright); text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--accent-bright) 40%, transparent); }
+  @media (max-width: 700px) {
+    .about-grid { grid-template-columns: 1fr; gap: 24px; }
+    .avatar-col { flex-direction: row; text-align: left; justify-content: flex-start; }
+    .avatar-mono { width: 76px; height: 76px; font-size: 1.4rem; }
+  }
 </style>
 </head>
 <body>
@@ -254,6 +276,7 @@
     <div class="logo">Darrell Rhodes<span>.</span></div>
     <nav class="nav-links">
       <a href="#proof">Proof of Work</a>
+      <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#services">Services</a>
       <a href="#stack">Stack</a>
@@ -315,6 +338,35 @@
         <div class="c3">→ local relevance ..... <span class="c1">tuned</span></div>
         <div class="c3">→ AEO / answer-ready .. <span class="c2">enhanced</span></div>
         <div style="margin-top:10px;">building for <span class="c1">Google Search</span> + <span class="c2">AI Answers</span> …</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="wrap">
+    <div class="section-head">
+      <span class="kicker">About</span>
+      <h2>The person behind the rankings.</h2>
+      <p>No agency, no account manager, no outsourced writers — one person who built these results himself.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="avatar-col">
+        <div class="avatar-mono" aria-hidden="true">DR</div>
+        <div class="avatar-meta">
+          <strong>Darrell Rhodes</strong>
+          <span>Los Angeles, CA</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <p>Darrell spent over 15 years as a Sports Performance Trainer before turning that business into <a href="https://sportstraininglosangeles.com" target="_blank" rel="noopener">SportsTrainingLosAngeles.com</a> — the case study at the top of this page, and the project that turned him into an SEO leader in his industry.</p>
+        <p>That same build-it-yourself approach carried into <strong>Legal Remote US</strong>, a nationwide platform he founded and still runs today: a programmatic SEO system generating roughly 10,000 pages on Python and Cloudflare, including tracking down and fixing a site-wide 308 redirect issue that was quietly killing crawlability and indexation — the kind of technical SEO problem you only learn to spot by running a site at scale, not just auditing one.</p>
+        <p>Everything else on this page — the copywriting, the AEO work, the full-stack builds — was learned the same self-taught, hands-on way. Real sites, real rankings, real problems solved under his own name.</p>
+        <div class="badges">
+          <span class="badge">Los Angeles, CA</span>
+          <span class="badge">Founder — Legal Remote US</span>
+          <span class="badge">Built — SportsTrainingLosAngeles.com</span>
+          <span class="badge">Self-Taught — SEO, Copy &amp; Full-Stack Dev</span>
+        </div>
       </div>
     </div>
   </section>
