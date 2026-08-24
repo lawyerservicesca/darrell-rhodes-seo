@@ -63,8 +63,9 @@
     }
   }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; overflow-wrap: break-word; min-width: 0; }
   html { scroll-behavior: smooth; }
+  html, body { overflow-x: hidden; max-width: 100%; }
   body {
     background: var(--bg);
     color: var(--ink);
@@ -171,19 +172,22 @@
   .badge {
     font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; padding: 7px 13px;
     border: 1px solid var(--line); border-radius: 8px; color: var(--ink-soft); background: var(--bg-alt);
+    text-decoration: none; display: inline-block; transition: border-color .15s, color .15s;
   }
+  a.badge:hover { border-color: var(--accent-bright); color: var(--ink); }
 
   /* ---------- CASE STUDY ---------- */
   .case-study {
     background: var(--code-bg); color: var(--code-ink); border-radius: 18px; padding: 40px;
     display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 36px; align-items: center;
   }
+  .case-study > div { min-width: 0; }
   @media (max-width: 800px) { .case-study { grid-template-columns: 1fr; padding: 28px; } }
   .case-study .tag {
     font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--accent-bright);
     margin-bottom: 14px; display: block;
   }
-  .case-study h3 { color: #fff; font-size: 1.5rem; margin-bottom: 14px; }
+  .case-study h3 { color: #fff; font-size: clamp(1.15rem, 5.5vw, 1.5rem); margin-bottom: 14px; overflow-wrap: break-word; }
   .case-study p { color: var(--code-ink); opacity: 0.85; font-size: 0.95rem; margin-bottom: 18px; }
   .kw-list { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
   .kw {
@@ -222,8 +226,8 @@
   @media (max-width: 800px) { .split { grid-template-columns: 1fr; gap: 36px; } }
   .split h3 { font-size: 1.1rem; margin-bottom: 14px; }
   .split ul { list-style: none; }
-  .split li { padding: 10px 0; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: 0.94rem; display: flex; gap: 10px; }
-  .split li::before { content: "→"; color: var(--accent-bright); flex-shrink: 0; }
+  .split li { padding: 10px 0 10px 26px; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: 0.94rem; position: relative; }
+  .split li::before { content: "→"; color: var(--accent-bright); position: absolute; left: 0; top: 10px; }
 
   /* ---------- CTA ---------- */
   .cta {
@@ -359,12 +363,15 @@
       </div>
       <div class="about-text">
         <p>Darrell spent over 15 years as a Sports Performance Trainer before turning that business into <a href="https://sportstraininglosangeles.com" target="_blank" rel="noopener">SportsTrainingLosAngeles.com</a> — the case study at the top of this page, and the project that turned him into an SEO leader in his industry.</p>
-        <p>That same build-it-yourself approach carried into <strong>Legal Remote US</strong>, a nationwide platform he founded and still runs today: a programmatic SEO system generating roughly 10,000 pages on Python and Cloudflare, including tracking down and fixing a site-wide 308 redirect issue that was quietly killing crawlability and indexation — the kind of technical SEO problem you only learn to spot by running a site at scale, not just auditing one.</p>
+        <p>That same build-it-yourself approach carried into <a href="https://lawyerservicesarizona.com" target="_blank" rel="noopener">LawyerServicesArizona.com</a> — his first build, generating leads and doing business directly with Arizona attorneys — and then into <strong>Legal Remote US</strong>, a nationwide platform he founded and still runs today: a programmatic SEO system generating roughly 10,000 pages on Python and Cloudflare, including tracking down and fixing a site-wide 308 redirect issue that was quietly killing crawlability and indexation — the kind of technical SEO problem you only learn to spot by running a site at scale, not just auditing one.</p>
+        <p>He's also built and SEO-optimized <a href="https://mdrwatchdog.com" target="_blank" rel="noopener">MDRwatchdog.com</a> — proof the same technical SEO approach holds up outside the fitness and legal niches too.</p>
         <p>Everything else on this page — the copywriting, the AEO work, the full-stack builds — was learned the same self-taught, hands-on way. Real sites, real rankings, real problems solved under his own name.</p>
         <div class="badges">
           <span class="badge">Los Angeles, CA</span>
           <span class="badge">Founder — Legal Remote US</span>
-          <span class="badge">Built — SportsTrainingLosAngeles.com</span>
+          <a class="badge" href="https://sportstraininglosangeles.com" target="_blank" rel="noopener">Built — SportsTrainingLosAngeles.com</a>
+          <a class="badge" href="https://lawyerservicesarizona.com" target="_blank" rel="noopener">Built — LawyerServicesArizona.com</a>
+          <a class="badge" href="https://mdrwatchdog.com" target="_blank" rel="noopener">Built — MDRwatchdog.com</a>
           <span class="badge">Self-Taught — SEO, Copy &amp; Full-Stack Dev</span>
         </div>
       </div>
